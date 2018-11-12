@@ -2,6 +2,7 @@ package Board;
 
 import Board.Casas;
 import Control.Control;
+import Handlers.ActionHandler;
 
 import java.awt.*;
 import java.awt.geom.*;
@@ -214,7 +215,10 @@ public class Board extends JPanel {
 							try {
 								Pino = ImageIO.read(new File("src\\Board\\pin-green.png"));
 							}
-							catch(IOException e) {}
+							catch(IOException e) {
+								System.out.println(e.getMessage());
+								System.exit(1);
+							}
 							g2d.fill(rect);
 							g2d.drawImage(Pino, rectX, rectY + this.yOrigin, 40, 40, null);
 						}
@@ -255,7 +259,10 @@ public class Board extends JPanel {
 							try {
 								Pino = ImageIO.read(new File("src\\Board\\pin-red.png"));
 							}
-							catch(IOException e) {}
+							catch(IOException e) {
+								System.out.println(e.getMessage());
+								System.exit(1);
+							}
 							g2d.fill(rect);
 							g2d.drawImage(Pino, rectX, rectY + this.yOrigin, 40, 40, null);
 						}
@@ -293,7 +300,10 @@ public class Board extends JPanel {
 							try {
 								Pino = ImageIO.read(new File("src\\Board\\pin-yellow.png"));
 							}
-							catch(IOException e) {}
+							catch(IOException e) {
+								System.out.println(e.getMessage());
+								System.exit(1);
+							}
 							g2d.fill(rect);
 							g2d.drawImage(Pino, rectX, rectY + this.yOrigin, 40, 40, null);
 						}
@@ -330,7 +340,10 @@ public class Board extends JPanel {
 							try {
 								Pino = ImageIO.read(new File("src\\Board\\pin-blue.png"));
 							}
-							catch(IOException e) {}
+							catch(IOException e) {
+								System.out.println(e.getMessage());
+								System.exit(1);
+							}
 							g2d.fill(rect);
 							g2d.drawImage(Pino, rectX, rectY + this.yOrigin, 40, 40, null);
 						}
@@ -365,6 +378,38 @@ public class Board extends JPanel {
 				
 			}
 		}
+		if(ActionHandler.diceRollValue != 0) {
+			BufferedImage Dado = null;
+			try {
+				switch(ActionHandler.diceRollValue) {
+				case 1:
+					Dado = ImageIO.read(new File("src\\Board\\Dado1.png"));
+					break;
+				case 2:
+					Dado = ImageIO.read(new File("src\\Board\\Dado2.png"));
+					break;
+				case 3:
+					Dado = ImageIO.read(new File("src\\Board\\Dado3.png"));
+					break;
+				case 4:
+					Dado = ImageIO.read(new File("src\\Board\\Dado4.png"));
+					break;
+				case 5:
+					Dado = ImageIO.read(new File("src\\Board\\Dado5.png"));
+					break;
+				case 6:
+					Dado = ImageIO.read(new File("src\\Board\\Dado6.png"));
+					break;
+				}
+			}
+			catch(IOException e) {
+			System.out.println(e.getMessage());
+			System.exit(1);
+			}
+			
+			g2d.drawImage(Dado, 600, 50, 40, 40, null);
+		}
+		}
 	
 	}
-}
+	

@@ -1,3 +1,8 @@
+package Control;
+import Board.*;
+import Handlers.*;
+
+import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -24,12 +29,12 @@ public class Control {
 		frame.setLayout(new BorderLayout());
 		
 		//Setting up components and event listeners
-		diceRollLabel = new JLabel("Jogue o dado para comeÃ§ar");
+		diceRollLabel = new JLabel("Jogue o dado para começar");
 		diceRollLabel.setOpaque(true);
 		diceRollLabel.setBorder(new EmptyBorder(10, 5, 10, 5));
 		diceRollLabel.setBackground(Color.WHITE);
 		diceRollLabel.setForeground(Color.BLACK);
-		mouseClickInfo = new JLabel("AÃ§Ãµes do mouse serÃ£o exibidas aqui.");
+		mouseClickInfo = new JLabel("Ações do mouse serão exibidas aqui.");
 		
 		diceRoll.addActionListener(new ActionHandler(this));
 		gameBoard.addMouseListener(new MouseHandler());

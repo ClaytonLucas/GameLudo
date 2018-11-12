@@ -25,7 +25,7 @@ public class MouseHandler implements MouseListener{
 		this.indexCasaSelecionadaY = (int)this.y / 40;
 		casas[this.indexCasaSelecionadaX][this.indexCasaSelecionadaY].setColor(Color.ORANGE);
 		//System.out.println(casas[this.indexCasaSelecionadaX][this.indexCasaSelecionadaY].getColor());
-		Control.gameBoard.repaint();;
+		Control.gameBoard.repaint();
 		
 		/*this.casaSelecionada = (((int) this.y / 40) * 10) + ((int) this.x / 40);
 		casa = Board.casas[11][11];
